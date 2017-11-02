@@ -5,3 +5,15 @@ pipeline:
       - sleep 5
       - go test
       - sleep 15
+
+  slack:
+    image: plugins/slack
+    channel: bots
+    secrets: [ slack_webhook ]
+
+  email:
+    image: drillster/drone-email
+    from: ci@secondarymetabolites.org
+    host: mail.secondarymetabolites.org
+    username: antismash
+    secrets: [ email_password ]
