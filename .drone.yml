@@ -2,4 +2,6 @@ pipeline:
   build:
     image: golang
     commands:
+      - sleep 5
       - go test
+      - sleep 15
